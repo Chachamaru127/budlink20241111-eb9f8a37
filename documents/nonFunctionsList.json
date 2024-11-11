@@ -1,0 +1,95 @@
+{
+  "key": "nonFunctionsList",
+  "value": [
+    {
+      "id": "NON-001",
+      "category": "セキュリティ",
+      "non_function_name": "ユーザー認証",
+      "description": "Supabaseを活用したユーザー認証システムを実装し、多要素認証やパスワードポリシーの設定、セッション管理を行う"
+    },
+    {
+      "id": "NON-002",
+      "category": "セキュリティ",
+      "non_function_name": "通信暗号化",
+      "description": "SSL/TLS証明書を使用してすべての通信を暗号化し、データの盗聴や改ざんを防止する"
+    },
+    {
+      "id": "NON-003",
+      "category": "パフォーマンス",
+      "non_function_name": "レスポンス時間",
+      "description": "ページの読み込み時間を3秒以内、API応答を1秒以内に抑える"
+    },
+    {
+      "id": "NON-004",
+      "category": "パフォーマンス",
+      "non_function_name": "同時アクセス対応",
+      "description": "最大1000ユーザーの同時アクセスに対応し、自動スケーリングによりパフォーマンスを維持する"
+    },
+    {
+      "id": "NON-005",
+      "category": "可用性",
+      "non_function_name": "システム稼働率",
+      "description": "年間稼働率99.9%以上を維持し、計画的なメンテナンス以外のダウンタイムを最小限に抑える"
+    },
+    {
+      "id": "NON-006",
+      "category": "可用性",
+      "non_function_name": "バックアップ",
+      "description": "データベースの自動バックアップを1日1回実施し、障害時に2時間以内での復旧を可能にする"
+    },
+    {
+      "id": "NON-007",
+      "category": "保守性",
+      "non_function_name": "モニタリング",
+      "description": "システムの稼働状況、パフォーマンス、エラー発生を常時監視し、異常検知時に自動通知を行う"
+    },
+    {
+      "id": "NON-008",
+      "category": "保守性",
+      "non_function_name": "バージョン管理",
+      "description": "ソースコードのバージョン管理をGitで行い、リリース手順と変更履歴を明確に管理する"
+    },
+    {
+      "id": "NON-009",
+      "category": "拡張性",
+      "non_function_name": "API拡張性",
+      "description": "RESTful APIの設計により、将来的な機能追加やサードパーティ連携に柔軟に対応できる構造とする"
+    },
+    {
+      "id": "NON-010",
+      "category": "拡張性",
+      "non_function_name": "データベーススケーラビリティ",
+      "description": "データ量の増加に対応できるよう、水平スケーリングが可能なデータベース設計を行う"
+    },
+    {
+      "id": "NON-011",
+      "category": "運用保守",
+      "non_function_name": "ユーザーサポート",
+      "description": "平日9:00-18:00のメールサポート対応、重要度に応じた応答時間の設定（重要：2時間以内、通常：24時間以内）"
+    },
+    {
+      "id": "NON-012",
+      "category": "運用保守",
+      "non_function_name": "システム監視",
+      "description": "24時間365日のシステム監視体制を整備し、インシデント発生時の対応フローを確立する"
+    },
+    {
+      "id": "NON-013",
+      "category": "コンプライアンス",
+      "non_function_name": "法令遵守",
+      "description": "個人情報保護法、薬機法などの関連法令に準拠したシステム設計と運用を行う"
+    },
+    {
+      "id": "NON-014",
+      "category": "コンプライアンス",
+      "non_function_name": "監査ログ管理",
+      "description": "ユーザーの操作履歴、システム変更履歴を記録し、法定保存期間に応じて適切に管理する"
+    },
+    {
+      "id": "NON-015",
+      "category": "品質管理",
+      "non_function_name": "テスト実施",
+      "description": "単体テスト、結合テスト、システムテスト、負荷テストを体系的に実施し、品質基準への適合を確認する"
+    }
+  ]
+}

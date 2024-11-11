@@ -1,0 +1,425 @@
+{
+  "key": "functionsList",
+  "value": [
+    {
+      "id": "FUN-001",
+      "category": "トレーサビリティ管理",
+      "function_name": "トレーサビリティ情報登録",
+      "description": "CBD製品の輸入情報、製造情報、流通情報などのトレーサビリティデータを登録・管理する機能",
+      "input": "原産国情報、COA、輸入許可通知書、製造情報、ロット番号など",
+      "output": "トレーサビリティ情報、QRコード、ロット管理番号",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者",
+      "estimationCategory": "function",
+      "functionName": "トレーサビリティ情報登録",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-002",
+      "category": "トレーサビリティ管理",
+      "function_name": "QRコード生成",
+      "description": "登録されたトレーサビリティ情報に基づきQRコードを生成する機能",
+      "input": "トレーサビリティ情報、ロット番号",
+      "output": "QRコード画像データ",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者",
+      "estimationCategory": "function",
+      "functionName": "QRコード生成",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-003",
+      "category": "トレーサビリティ管理",
+      "function_name": "トレーサビリティ情報照会",
+      "description": "QRコードまたはロット番号から製品の追跡情報を照会する機能",
+      "input": "QRコード、ロット番号",
+      "output": "トレーサビリティ情報の詳細表示",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "トレーサビリティ情報照会",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-004",
+      "category": "B2B取引",
+      "function_name": "商品登録",
+      "description": "CBD製品の商品情報を登録し、B2Bプラットフォームに掲載する機能",
+      "input": "商品名、価格、在庫数、製品情報、COA、商品画像",
+      "output": "商品情報の登録完了通知、商品掲載ページ",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者",
+      "estimationCategory": "function",
+      "functionName": "商品登録",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-005",
+      "category": "B2B取引",
+      "function_name": "商品検索",
+      "description": "登録された商品を検索・閲覧する機能",
+      "input": "検索条件（商品カテゴリ、価格帯、キーワードなど）",
+      "output": "検索結果一覧",
+      "user": "CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "商品検索",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-006",
+      "category": "B2B取引",
+      "function_name": "受注管理",
+      "description": "受注情報を管理し、出荷処理を行う機能",
+      "input": "注文情報、出荷情報",
+      "output": "受注確認通知、出荷完了通知",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者",
+      "estimationCategory": "function",
+      "functionName": "受注管理",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-007",
+      "category": "B2B取引",
+      "function_name": "発注管理",
+      "description": "商品の発注処理を行う機能",
+      "input": "商品選択、発注数量、配送先情報",
+      "output": "発注確認通知、注文履歴",
+      "user": "CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "発注管理",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-008",
+      "category": "書類管理",
+      "function_name": "法的書類登録",
+      "description": "CBD製品の取り扱いに必要な法的書類をアップロードし管理する機能",
+      "input": "COA、輸入許可通知書、製造許可証など各種書類",
+      "output": "書類登録完了通知、有効期限通知",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "法的書類登録",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-009",
+      "category": "書類管理",
+      "function_name": "AI書類チェック",
+      "description": "アップロードされた書類の内容をAIで確認し、整合性をチェックする機能",
+      "input": "登録済み法的書類",
+      "output": "チェック結果レポート、不整合箇所の指摘",
+      "user": "システム管理者",
+      "estimationCategory": "function",
+      "functionName": "AI書類チェック",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0300",
+        "design": "0.0300",
+        "implementation": "0.1200",
+        "test": "0.0600",
+        "release": "0.0300",
+        "migration": "0.0300"
+      },
+      "difficulty": "Complex"
+    },
+    {
+      "id": "FUN-010",
+      "category": "決済管理",
+      "function_name": "オンライン決済処理",
+      "description": "B2B取引における代金支払いをオンラインで処理する機能",
+      "input": "支払い方法選択、決済金額、決済情報",
+      "output": "決済完了通知、取引明細",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "オンライン決済処理",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-011",
+      "category": "決済管理",
+      "function_name": "入出金管理",
+      "description": "取引に関する入出金状況を管理する機能",
+      "input": "取引データ、入出金データ",
+      "output": "入出金履歴、残高情報",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "入出金管理",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-012",
+      "category": "データ分析",
+      "function_name": "取引データ分析",
+      "description": "プラットフォーム上の取引データを分析する機能",
+      "input": "取引履歴データ、商品データ",
+      "output": "分析レポート、統計情報",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "取引データ分析",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-013",
+      "category": "データ分析",
+      "function_name": "需要予測",
+      "description": "過去の取引データを基に将来の需要を予測する機能",
+      "input": "過去の取引データ、季節要因データ",
+      "output": "需要予測レポート",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者",
+      "estimationCategory": "function",
+      "functionName": "需要予測",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0300",
+        "design": "0.0300",
+        "implementation": "0.1200",
+        "test": "0.0600",
+        "release": "0.0300",
+        "migration": "0.0300"
+      },
+      "difficulty": "Complex"
+    },
+    {
+      "id": "FUN-014",
+      "category": "システム管理",
+      "function_name": "ユーザー登録管理",
+      "description": "システムユーザーの登録承認と管理を行う機能",
+      "input": "ユーザー登録申請情報、企業情報",
+      "output": "承認通知、アカウント情報",
+      "user": "システム管理者",
+      "estimationCategory": "function",
+      "functionName": "ユーザー登録管理",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-015",
+      "category": "システム管理",
+      "function_name": "権限設定",
+      "description": "ユーザーの利用権限を設定・管理する機能",
+      "input": "ユーザーID、権限設定情報",
+      "output": "権限設定完了通知",
+      "user": "システム管理者",
+      "estimationCategory": "function",
+      "functionName": "権限設定",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-016",
+      "category": "システム管理",
+      "function_name": "不正利用検知",
+      "description": "システムの不正利用を検知し、対応する機能",
+      "input": "利用ログ、アクセスログ",
+      "output": "不正利用アラート、対応レポート",
+      "user": "システム管理者",
+      "estimationCategory": "function",
+      "functionName": "不正利用検知",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0300",
+        "design": "0.0300",
+        "implementation": "0.1200",
+        "test": "0.0600",
+        "release": "0.0300",
+        "migration": "0.0300"
+      },
+      "difficulty": "Complex"
+    },
+    {
+      "id": "FUN-017",
+      "category": "トレーサビリティ管理",
+      "function_name": "流通履歴更新",
+      "description": "製品の流通過程での位置情報や状態を更新する機能",
+      "input": "位置情報、状態情報、日時情報",
+      "output": "流通履歴更新完了通知",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "流通履歴更新",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-018",
+      "category": "B2B取引",
+      "function_name": "在庫管理",
+      "description": "商品の在庫状況を管理する機能",
+      "input": "入出庫データ、在庫数調整",
+      "output": "在庫状況レポート、在庫アラート",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者",
+      "estimationCategory": "function",
+      "functionName": "在庫管理",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "FUN-019",
+      "category": "データ分析",
+      "function_name": "ダッシュボード表示",
+      "description": "取引データや分析結果をダッシュボードで可視化する機能",
+      "input": "分析済データ、KPI情報",
+      "output": "ダッシュボード画面",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "ダッシュボード表示",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0300",
+        "design": "0.0300",
+        "implementation": "0.1200",
+        "test": "0.0600",
+        "release": "0.0300",
+        "migration": "0.0300"
+      },
+      "difficulty": "Complex"
+    },
+    {
+      "id": "FUN-020",
+      "category": "書類管理",
+      "function_name": "書類有効期限管理",
+      "description": "登録された法的書類の有効期限を管理し、更新通知を行う機能",
+      "input": "書類情報、有効期限情報",
+      "output": "期限切れアラート、更新通知",
+      "user": "CBD製品輸入業者,CBD製品製造業者,CBD製品卸売業者,CBD製品小売業者",
+      "estimationCategory": "function",
+      "functionName": "書類有効期限管理",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "0.0200",
+        "design": "0.0200",
+        "implementation": "0.0800",
+        "test": "0.0400",
+        "release": "0.0200",
+        "migration": "0.0200"
+      },
+      "difficulty": "Moderate"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "key": "tableDefinition",
+  "value": [
+    {
+      "id": "TAB-001",
+      "table": "users",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "ユーザー固有のID"
+    },
+    {
+      "id": "TAB-002",
+      "table": "users",
+      "column": "email",
+      "dataType": "varchar(255)",
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "ユーザーのメールアドレス"
+    },
+    {
+      "id": "TAB-003",
+      "table": "users",
+      "column": "password",
+      "dataType": "varchar(255)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "ハッシュ化されたパスワード"
+    },
+    {
+      "id": "TAB-004",
+      "table": "users",
+      "column": "role",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "'buyer'",
+      "foreignKey": "",
+      "description": "ユーザーロール（importer, manufacturer, wholesaler, retailer, admin）"
+    },
+    {
+      "id": "TAB-005",
+      "table": "users",
+      "column": "company_name",
+      "dataType": "varchar(100)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "会社名"
+    },
+    {
+      "id": "TAB-006",
+      "table": "users",
+      "column": "license_info",
+      "dataType": "jsonb",
+      "regulation": "NOT NULL",
+      "defaultValue": "{\"license_number\": \"\", \"expiry_date\": null, \"license_type\": \"\"}",
+      "foreignKey": "",
+      "description": "ライセンス情報"
+    },
+    {
+      "id": "TAB-007",
+      "table": "users",
+      "column": "created_at",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "foreignKey": "",
+      "description": "作成日時"
+    },
+    {
+      "id": "TAB-008",
+      "table": "users",
+      "column": "updated_at",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "foreignKey": "",
+      "description": "更新日時"
+    },
+    {
+      "id": "TAB-009",
+      "table": "products",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "製品固有のID"
+    },
+    {
+      "id": "TAB-010",
+      "table": "products",
+      "column": "seller_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "users(id)",
+      "description": "販売者ID"
+    },
+    {
+      "id": "TAB-011",
+      "table": "products",
+      "column": "name",
+      "dataType": "varchar(100)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "製品名"
+    },
+    {
+      "id": "TAB-012",
+      "table": "products",
+      "column": "description",
+      "dataType": "text",
+      "regulation": "",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "製品説明"
+    },
+    {
+      "id": "TAB-013",
+      "table": "products",
+      "column": "price",
+      "dataType": "decimal(10,2)",
+      "regulation": "NOT NULL",
+      "defaultValue": "0",
+      "foreignKey": "",
+      "description": "製品価格"
+    },
+    {
+      "id": "TAB-014",
+      "table": "products",
+      "column": "stock",
+      "dataType": "integer",
+      "regulation": "NOT NULL",
+      "defaultValue": "0",
+      "foreignKey": "",
+      "description": "在庫数"
+    },
+    {
+      "id": "TAB-015",
+      "table": "products",
+      "column": "status",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "'active'",
+      "foreignKey": "",
+      "description": "製品ステータス（active, inactive, out_of_stock）"
+    },
+    {
+      "id": "TAB-016",
+      "table": "traceability",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "トレーサビリティ情報ID"
+    },
+    {
+      "id": "TAB-017",
+      "table": "traceability",
+      "column": "product_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "products(id)",
+      "description": "製品ID"
+    },
+    {
+      "id": "TAB-018",
+      "table": "traceability",
+      "column": "lot_number",
+      "dataType": "varchar(50)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "ロット番号"
+    },
+    {
+      "id": "TAB-019",
+      "table": "traceability",
+      "column": "coa_data",
+      "dataType": "jsonb",
+      "regulation": "NOT NULL",
+      "defaultValue": "{\"certificate_number\": \"\", \"issue_date\": null, \"expiry_date\": null, \"test_results\": []}",
+      "foreignKey": "",
+      "description": "COA（品質証明書）データ"
+    },
+    {
+      "id": "TAB-020",
+      "table": "traceability",
+      "column": "import_info",
+      "dataType": "jsonb",
+      "regulation": "",
+      "defaultValue": "{\"import_date\": null, \"origin_country\": \"\", \"import_license\": \"\"}",
+      "foreignKey": "",
+      "description": "輸入情報"
+    }
+  ]
+}

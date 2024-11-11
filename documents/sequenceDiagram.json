@@ -1,0 +1,29 @@
+{
+  "key": "sequenceDiagram",
+  "value": [
+    {
+      "id": "トレーサビリティ管理",
+      "value": "{\n    \"mermaid\": \"sequenceDiagram\\n    actor User\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    Note over User,DB: トレーサビリティ情報登録フロー\\n    User->>Frontend: トレーサビリティ情報入力\\n    Frontend->>Frontend: 入力データのバリデーション\\n    Frontend->>Backend: トレーサビリティ情報送信\\n    Backend->>Backend: データ検証\\n    Backend->>DB: トレーサビリティ情報保存\\n    DB-->>Backend: 保存完了通知\\n    Backend->>Backend: QRコード生成\\n    Backend-->>Frontend: 登録完了とQRコード返却\\n    Frontend-->>User: 完了通知表示\\n\\n    Note over User,DB: トレーサビリティ情報照会フロー\\n    User->>Frontend: QRコードスキャン/ロット番号入力\\n    Frontend->>Backend: 照会リクエスト送信\\n    Backend->>DB: トレーサビリティ情報取得\\n    DB-->>Backend: データ返却\\n    Backend->>Backend: データ整形\\n    Backend-->>Frontend: トレーサビリティ情報返却\\n    Frontend-->>User: 情報表示\\n\\n    Note over User,DB: 流通履歴更新フロー\\n    User->>Frontend: 位置情報/状態更新入力\\n    Frontend->>Backend: 更新データ送信\\n    Backend->>DB: 流通履歴更新\\n    DB-->>Backend: 更新完了通知\\n    Backend-->>Frontend: 処理結果返却\\n    Frontend-->>User: 更新完了表示\"\n}"
+    },
+    {
+      "id": "B2B取引",
+      "value": "{\n    \"mermaid\": \"sequenceDiagram\\n    User->>Frontend: 商品情報入力\\n    Frontend->>Frontend: 入力値バリデーション\\n    Frontend->>Backend: 商品登録リクエスト送信\\n    Backend->>Backend: データ検証\\n    Backend->>DB: 商品情報保存\\n    DB-->>Backend: 保存完了\\n    Backend->>Backend: トレーサビリティ情報生成\\n    Backend->>DB: トレーサビリティ情報保存\\n    DB-->>Backend: 保存完了\\n    Backend-->>Frontend: 登録完了レスポンス\\n    Frontend-->>User: 登録完了表示\\n    Frontend->>Backend: 在庫情報取得リクエスト\\n    Backend->>DB: 在庫データ照会\\n    DB-->>Backend: 在庫データ返却\\n    Backend-->>Frontend: 在庫情報レスポンス\\n    Frontend-->>User: 在庫状況表示\"\n}"
+    },
+    {
+      "id": "書類管理",
+      "value": "{\n    \"mermaid\": \"sequenceDiagram\\n    actor User\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n    \\n    User->>Frontend: 書類アップロード要求\\n    Frontend->>Frontend: 書類フォーマット検証\\n    Frontend->>Backend: 書類データ送信\\n    Backend->>Backend: AIによる書類内容チェック\\n    Backend->>DB: 書類情報保存\\n    DB-->>Backend: 保存完了\\n    Backend->>Backend: 有効期限設定\\n    Backend->>Frontend: 処理結果返却\\n    Frontend->>User: 結果表示\\n    \\n    loop 有効期限監視\\n        Backend->>DB: 期限切れ書類確認\\n        DB-->>Backend: 期限切れ書類リスト\\n        Backend->>Frontend: 更新通知送信\\n        Frontend->>User: 通知表示\\n    end\\n    \\n    User->>Frontend: 書類詳細表示要求\\n    Frontend->>Backend: 書類情報取得要求\\n    Backend->>DB: 書類データ取得\\n    DB-->>Backend: 書類データ\\n    Backend->>Frontend: 書類情報返却\\n    Frontend->>User: 書類情報表示\"\n}"
+    },
+    {
+      "id": "決済管理",
+      "value": "{\n    \"mermaid\": \"sequenceDiagram\\n    actor User\\n    participant Frontend\\n    participant Backend\\n    participant PaymentService\\n    participant DB\\n\\n    User->>Frontend: 決済情報入力\\n    Frontend->>Frontend: 入力値バリデーション\\n    Frontend->>Backend: 決済処理リクエスト\\n    Backend->>DB: 取引情報の取得\\n    DB-->>Backend: 取引データ\\n    Backend->>PaymentService: 決済実行\\n    PaymentService-->>Backend: 決済結果\\n    Backend->>DB: 決済結果を保存\\n    DB-->>Backend: 保存完了\\n    Backend-->>Frontend: 決済完了通知\\n    Frontend-->>User: 決済完了画面表示\\n\\n    User->>Frontend: 入出金履歴確認\\n    Frontend->>Backend: 履歴データリクエスト\\n    Backend->>DB: 入出金履歴取得\\n    DB-->>Backend: 履歴データ\\n    Backend-->>Frontend: 履歴データ送信\\n    Frontend-->>User: 入出金履歴表示\"\n}"
+    },
+    {
+      "id": "データ分析",
+      "value": "{\n    \"mermaid\": \"sequenceDiagram\\n    User->>Frontend: データ分析ページにアクセス\\n    Frontend->>Backend: 分析データ要求\\n    Backend->>DB: 取引データ取得\\n    DB-->>Backend: 取引データ返却\\n    Backend->>Backend: データ集計処理\\n    Backend->>Backend: AI予測モデル実行\\n    Backend-->>Frontend: 分析結果返却\\n    Frontend->>Frontend: グラフ生成\\n    Frontend-->>User: ダッシュボード表示\\n    User->>Frontend: レポート出力要求\\n    Frontend->>Backend: レポート生成リクエスト\\n    Backend->>Backend: PDFレポート作成\\n    Backend-->>Frontend: レポートURL返却\\n    Frontend-->>User: ダウンロードリンク表示\\n    User->>Frontend: KPI閲覧要求\\n    Frontend->>Backend: KPIデータ要求\\n    Backend->>DB: 統計データ取得\\n    DB-->>Backend: データ返却\\n    Backend-->>Frontend: KPI情報返却\\n    Frontend-->>User: KPI表示\"\n}"
+    },
+    {
+      "id": "システム管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor User\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    User->>Frontend: アクセス権限の確認要求\\n    Frontend->>Backend: 権限確認リクエスト送信\\n    Backend->>DB: ユーザー権限情報照会\\n    DB->>Backend: 権限情報返却\\n    Backend->>Frontend: 権限情報送信\\n    Frontend->>User: 権限状態表示\\n\\n    User->>Frontend: ユーザー権限変更リクエスト\\n    Frontend->>Backend: 権限更新リクエスト送信\\n    Backend->>DB: 権限情報更新\\n    DB->>Backend: 更新結果返却\\n    Backend->>Frontend: 更新完了通知\\n    Frontend->>User: 完了メッセージ表示\\n\\n    Backend->>DB: 不正アクセスログ照会\\n    DB->>Backend: ログデータ返却\\n    Backend->>Frontend: 不正検知アラート送信\\n    Frontend->>User: アラート表示\"\n}"
+    }
+  ]
+}

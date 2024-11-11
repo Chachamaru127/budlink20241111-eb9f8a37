@@ -1,0 +1,29 @@
+{
+  "key": "screenTransition",
+  "value": [
+    {
+      "id": "トレーサビリティ管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Dashboard[ダッシュボード]\\n    Dashboard --> TraceList[トレーサビリティ情報一覧]\\n    TraceList --> TraceRegist[トレーサビリティ情報登録]\\n    TraceList --> TraceDetail[トレーサビリティ情報詳細]\\n    TraceRegist --> QRGenerate[QRコード生成]\\n    TraceDetail --> QRGenerate\\n    TraceList --> DistributionHistory[流通履歴一覧]\\n    DistributionHistory --> HistoryUpdate[流通履歴更新]\\n    QRGenerate --> TraceDetail\\n    TraceDetail --> TraceUpdate[トレーサビリティ情報更新]\\n    TraceUpdate --> TraceDetail\"\n}"
+    },
+    {
+      "id": "B2B取引",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Dashboard[ダッシュボード]\\n    Dashboard --> ProductList[商品一覧画面]\\n    Dashboard --> ProductReg[商品登録画面]\\n    Dashboard --> InventoryMng[在庫管理画面]\\n    Dashboard --> OrderMng[受注管理画面]\\n    Dashboard --> PurchaseOrder[発注管理画面]\\n    ProductList --> ProductDetail[商品詳細画面]\\n    ProductDetail --> PurchaseOrder\\n    ProductReg --> ProductConfirm[商品登録確認画面]\\n    ProductConfirm --> ProductComplete[商品登録完了画面]\\n    OrderMng --> OrderDetail[受注詳細画面]\\n    OrderDetail --> ShipmentMng[出荷管理画面]\\n    PurchaseOrder --> OrderConfirm[発注確認画面]\\n    OrderConfirm --> OrderComplete[発注完了画面]\\n    InventoryMng --> StockEdit[在庫数編集画面]\\n    StockEdit --> StockConfirm[在庫更新確認画面]\"\n}"
+    },
+    {
+      "id": "書類管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Dashboard[ダッシュボード]\\n    Dashboard --> DocManage[書類管理一覧]\\n    DocManage --> DocUpload[書類アップロード]\\n    DocManage --> DocView[書類閲覧]\\n    DocManage --> DocExpiry[有効期限管理]\\n    DocUpload --> AICheck[AI書類チェック]\\n    AICheck --> CheckResult[チェック結果表示]\\n    DocExpiry --> ExpiryList[期限切れ書類一覧]\\n    ExpiryList --> NotifSetting[通知設定]\\n    DocView --> DocDetail[書類詳細表示]\\n    DocDetail --> DocHistory[変更履歴表示]\"\n}"
+    },
+    {
+      "id": "決済管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Dashboard[ダッシュボード]\\n    Dashboard --> PaymentList[決済一覧画面]\\n    Dashboard --> BalanceList[残高一覧画面]\\n    PaymentList --> PaymentDetail[決済詳細画面]\\n    PaymentList --> NewPayment[新規決済画面]\\n    NewPayment --> PaymentConfirm[決済確認画面]\\n    PaymentConfirm --> PaymentComplete[決済完了画面]\\n    PaymentComplete --> PaymentDetail\\n    BalanceList --> TransactionHistory[取引履歴画面]\\n    TransactionHistory --> TransactionDetail[取引詳細画面]\\n    PaymentDetail --> TransactionDetail\"\n}"
+    },
+    {
+      "id": "データ分析",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Dashboard[ダッシュボード]\\n    Dashboard --> Analytics[データ分析画面]\\n    Analytics --> TransactionAnalysis[取引データ分析]\\n    Analytics --> DemandForecast[需要予測分析]\\n    TransactionAnalysis --> AnalyticsReport[分析レポート表示]\\n    DemandForecast --> ForecastReport[予測レポート表示]\\n    Dashboard --> KPI[KPI表示画面]\\n    KPI --> SalesChart[売上推移グラフ]\\n    KPI --> ProductChart[商品別分析]\\n    KPI --> RegionChart[地域別分析]\\n    Analytics --> ExportData[データエクスポート]\\n    AnalyticsReport --> ExportData\\n    ForecastReport --> ExportData\"\n}"
+    },
+    {
+      "id": "システム管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> AdminDash[管理者ダッシュボード]\\n    AdminDash --> UserMgmt[ユーザー管理画面]\\n    AdminDash --> RoleMgmt[権限管理画面]\\n    AdminDash --> FraudDet[不正利用検知画面]\\n    UserMgmt --> UserDetail[ユーザー詳細画面]\\n    UserMgmt --> UserApproval[ユーザー承認画面]\\n    RoleMgmt --> RoleEdit[権限編集画面]\\n    FraudDet --> AlertDetail[アラート詳細画面]\\n    FraudDet --> FraudReport[不正利用レポート画面]\\n    UserDetail --> UserEdit[ユーザー情報編集画面]\\n    AlertDetail --> ActionLog[対応履歴画面]\"\n}"
+    }
+  ]
+}

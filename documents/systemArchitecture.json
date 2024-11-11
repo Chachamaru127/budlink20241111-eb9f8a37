@@ -1,0 +1,6 @@
+{
+  "key": "systemArchitecture",
+  "value": {
+    "mermaid": "graph TD\n    subgraph フロントエンド\n        IM[輸入業者UI] \n        MF[製造業者UI]\n        WH[卸売業者UI]\n        RT[小売業者UI]\n        AD[管理者UI]\n    end\n\n    subgraph バックエンド\n        API[APIサーバー]\n        TRC[トレーサビリティサービス]\n        DOC[書類管理サービス]\n        PAY[決済サービス]\n        ANL[データ分析サービス]\n        AUTH[認証認可サービス]\n    end\n\n    subgraph データベース\n        USERDB[ユーザーDB]\n        PRODUCTDB[商品DB]\n        TRACEDB[トレーサビリティDB]\n        DOCDB[書類管理DB]\n        ORDERDB[取引DB]\n    end\n\n    subgraph 外部サービス\n        PAYMENT[決済ゲートウェイ]\n        AI[AI書類チェック]\n        STORAGE[クラウドストレージ]\n    end\n\n    IM --> API\n    MF --> API\n    WH --> API\n    RT --> API\n    AD --> API\n\n    API --> AUTH\n    API --> TRC\n    API --> DOC\n    API --> PAY\n    API --> ANL\n\n    AUTH --> USERDB\n    TRC --> TRACEDB\n    DOC --> DOCDB\n    PAY --> ORDERDB\n    ANL --> PRODUCTDB\n\n    DOC --> AI\n    PAY --> PAYMENT\n    DOC --> STORAGE"
+  }
+}

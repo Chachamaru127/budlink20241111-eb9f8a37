@@ -1,0 +1,6 @@
+{
+  "key": "erDiagram",
+  "value": {
+    "mermaid": "erDiagram\n    users {\n        uuid id PK\n        varchar_255 email\n        varchar_255 password\n        varchar_20 role\n        varchar_100 company_name\n        jsonb license_info\n        timestamp created_at\n        timestamp updated_at\n    }\n    products {\n        uuid id PK\n        uuid seller_id FK\n        varchar_100 name\n        text description\n        decimal price\n        integer stock\n        varchar_20 status\n    }\n    traceability {\n        uuid id PK\n        uuid product_id FK\n        varchar_50 lot_number\n        jsonb coa_data\n        jsonb import_info\n    }\n    users ||--o{ products : sells\n    products ||--o{ traceability : has"
+  }
+}
